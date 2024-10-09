@@ -1,7 +1,8 @@
 from dotenv import load_dotenv
 from flask import Flask
 
-from app.extensions import cors, socket_io
+from app.database import *
+from app.extensions import cors, database, socket_io
 from app.facades import storage
 
 from . import parameters
@@ -22,9 +23,15 @@ def _create_uploads_dir() -> None:
 
 
 def configure_enviroment(app: Flask) -> None:
-    load_dotenv(paths.ENV_FILE)
+    load_dotenv(paths.ENV_PATH)
     _apply_parameters(app)
     _create_uploads_dir()
+
+
+def _configure_database(app: Flask) -> None:
+    database.init_app(app)
+    with app.app_context():
+        database.create_all()
 
 
 def _configure_cors(app: Flask) -> None:
@@ -40,5 +47,6 @@ def _configure_socket_io(app: Flask) -> None:
 
 
 def configure_extensions(app: Flask) -> None:
+    _configure_database
     _configure_cors(app)
     _configure_socket_io(app)
