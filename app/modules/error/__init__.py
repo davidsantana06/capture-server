@@ -5,3 +5,4 @@ error = Blueprint('error', __name__)
 
 
 from .events import *
+from .routes import *
