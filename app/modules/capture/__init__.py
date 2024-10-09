@@ -5,3 +5,4 @@ capture = Blueprint('capture', __name__, url_prefix='/capture')
 
 
 from .events import *
+from .routes import *
