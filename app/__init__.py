@@ -1,7 +1,7 @@
 from flask import Flask
 
 from .config import configure_enviroment, configure_extensions
-from .modules.capture import capture, error
+from .modules import capture, error
 
 
 app = Flask(__name__)
