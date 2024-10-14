@@ -13,10 +13,6 @@ class StorageFacade():
     def create_dir(self, path: Path) -> None:
         path.mkdir(parents=True, exist_ok=True)
 
-    def create_file(
-        self,
-        path: Path,
-        content: bytes
-    ) -> None:
-        with open(path, 'wb') as file:
-            file.write(content)
+    def create_file(self, content: bytes, path: Path) -> None:
+        with open(path, 'wb') as buffer:
+            buffer.write(content)

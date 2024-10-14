@@ -20,10 +20,10 @@ def generate_file_name() -> str:
     return f'{uuid4()}.png'
 
 
-def store(file_name: str, base64: str) -> None:
-    path = compose_file_path(file_name)
+def store(base64: str, file_name: str) -> None:
     content = b64decode(base64)
-    storage.create_file(path, content)
+    path = compose_file_path(file_name)
+    storage.create_file(content, path)
 
 
 def create(file_name: str) -> Capture:
