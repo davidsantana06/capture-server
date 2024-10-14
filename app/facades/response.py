@@ -11,10 +11,10 @@ from typing import Dict, List, Literal, Union
 class ResponseFacade():
     def as_emission(
         self,
-        category: Literal['success', 'error'],
+        event: Literal['success', 'error'],
         message: str,
     ) -> None:
-        emit(category, {'message': message})
+        emit(event, message)
 
     def as_file(
         self,
