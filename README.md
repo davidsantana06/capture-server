@@ -9,23 +9,29 @@ Server designed for the storage and sharing of screenshots. The primary means of
 
 ### 🛠️ Installation and Configuration
 
-#### 🗄️ Server
+The system was developed using **Python 3.12**, and it is recommended to use this version to ensure compatibility.
 
-The system was developed using **Python 3.12**, and it is recommended to use this version to ensure compatibility. You will need to obtain a local copy of the source code, which can be done with the following command:
+#### 1️⃣ Clone Repository
+
+You will need to obtain a local copy of the source code, which can be done with the following command:
 
 ```bash
 git clone https://github.com/davidsantana06/capture-server
 ```
 
-Once you have the files, create a `.env` file based on the template provided in `.env.example`. In this file, specify the following field:
+#### 2️⃣ Configure Environment
 
-- `ALLOWED_HOSTS` - A list of addresses (or domains) allowed to make requests to the server, separated by space.
+Once you have the files, create a `.env` file based on the template provided in `.env.example`, and specify the `ALLOWED_HOSTS` field as a space-separated list of addresses or domains that are allowed to make requests to the server.
 
-Next, install the application dependencies using the command:
+#### 3️⃣ Install Dependencies
+
+Next, install the application dependencies using the following command:
 
 ```bash
 pip install -r requirements.txt
 ```
+
+#### 4️⃣ Run
 
 Finally, start the server with:
 
@@ -33,9 +39,9 @@ Finally, start the server with:
 flask --app app run
 ```
 
-#### 🖥️ Client
+### 💻 Client
 
-The client can be integrated via the [**Images Folder - Client**](https://github.com/DiovanaS/images-folder/tree/main/client) by following the configuration instructions.
+The client can be integrated by following the configuration instructions available in the [**🔗 Images Folder - Client**](https://github.com/DiovanaS/images-folder/tree/main/client).
 
 ### ⚖️ License
 
