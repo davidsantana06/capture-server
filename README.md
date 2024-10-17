@@ -9,6 +9,8 @@ Server designed for the storage and sharing of screenshots. The primary means of
 
 ### 🛠️ Installation and Configuration
 
+#### 🗄️ Server
+
 The system was developed using **Python 3.12**, and it is recommended to use this version to ensure compatibility. You will need to obtain a local copy of the source code, which can be done with the following command:
 
 ```bash
@@ -31,7 +33,9 @@ Finally, start the server with:
 flask --app app run
 ```
 
-This process can be performed within a virtual environment.
+#### 🖥️ Client
+
+The client can be integrated via the [**Images Folder - Client**](https://github.com/DiovanaS/images-folder/tree/main/client) by following the configuration instructions.
 
 ### ⚖️ License
 
