@@ -3,18 +3,18 @@ from pathlib import Path
 from werkzeug.exceptions import NotFound
 from uuid import uuid4
 
-from app.config import paths
+from app.config import path
 from app.database import Capture, Captures
-from app.facades import storage
+from app.facade import storage
 
 
 # common _
 
 def compose_file_path(file_name: str) -> Path:
-    return storage.format(paths.CAPTURE_FILE, file_name)
+    return storage.format(path.CAPTURE_FILE, file_name)
 
 
-# for events _
+# 4event _
 
 def generate_file_name() -> str:
     return f'{uuid4()}.png'
@@ -32,7 +32,7 @@ def create(file_name: str) -> Capture:
     return capture
 
 
-# for routes _
+# 4route _
 
 def get_all() -> Captures:
     return Capture.find_all()
@@ -40,6 +40,5 @@ def get_all() -> Captures:
 
 def get_one_by_id(id: int) -> Capture:
     capture = Capture.find_first_by_id(id)
-    if not capture:
-        raise NotFound('The capture was not found.')
+    if not capture: raise NotFound('Capture not found.')
     return capture

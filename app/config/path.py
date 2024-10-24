@@ -1,7 +1,7 @@
-from app.facades import storage
+from pathlib import Path
 
 
-ROOT_DIR = storage.current_working_dir
+ROOT_DIR = Path(__file__).resolve().parent.parent.parent
 ''' / '''
 
 ENV_FILE = ROOT_DIR / '.env'

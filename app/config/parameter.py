@@ -1,8 +1,8 @@
 from os import environ
-from . import paths
+from . import path
 
 
-SQLALCHEMY_DATABASE_URI = f'sqlite:///{paths.DATABASE_FILE}'
+SQLALCHEMY_DATABASE_URI = f'sqlite:///{path.DATABASE_FILE}'
 SQLALCHEMY_TRACK_MODIFICATIONS = False
 
 WEBSOCKET_MAX_MESSAGE_SIZE = 1024 * 1024 * 8

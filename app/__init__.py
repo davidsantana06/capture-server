@@ -1,11 +1,12 @@
 from flask import Flask
 
-from .config import configure_enviroment, configure_extensions
-from .modules import capture, error
+from .config import setup_enviroment, setup_extensions
+from .module.capture import capture
+from .module.error import error
 
 
 app = Flask(__name__)
-configure_enviroment(app)
-configure_extensions(app)
+setup_enviroment(app)
+setup_extensions(app)
 app.register_blueprint(capture)
 app.register_blueprint(error)

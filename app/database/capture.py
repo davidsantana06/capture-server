@@ -3,7 +3,7 @@ from flask_sqlalchemy.model import Model
 from sqlalchemy import Column, DateTime, Integer, String
 from typing import Dict, List
 
-from app.extensions import database
+from app.extension import database
 
 
 Captures = List['Capture']
@@ -12,19 +12,9 @@ Captures = List['Capture']
 class Capture(database.Model, Model):
     __tablename__ = 'capture'
 
-    id = Column(
-        Integer,
-        autoincrement=True,
-        unique=True,
-        nullable=False,
-        primary_key=True
-    )
+    id = Column(Integer, autoincrement=True, primary_key=True)
     file_name = Column(String(40), nullable=False)
-    created_at = Column(
-        DateTime,
-        nullable=False,
-        default=datetime.now()
-    )
+    created_at = Column(DateTime, nullable=False, default=datetime.now())
 
     @staticmethod
     def save(capture: 'Capture') -> None:
