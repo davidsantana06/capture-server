@@ -7,6 +7,9 @@ Server designed for the storage and sharing of screenshots. The primary means of
 ![Socket.io](https://img.shields.io/badge/Socket.io-25c2a20?style=for-the-badge&logo=socket.io&badgeColor=white)
 ![SQLite](https://img.shields.io/badge/sqlite-%2307405e.svg?style=for-the-badge&logo=sqlite&logoColor=white)
 
+> [!NOTE]
+> The usage guide is available at [**📚 Docs**](./docs.md).
+
 ### 🛠️ Installation and Configuration
 
 The system was developed using **Python 3.12**, and it is recommended to use this version to ensure compatibility.
