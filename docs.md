@@ -1,12 +1,12 @@
 ### 📚 Docs
 
-This documentation serves as a guide for developers and users to understand how to interact with the application. It succinctly describes the application’s operation, including access to each available route and event. Modules are represented with "🧩," detailing their access points, with input (user) indicated by "📥" and output (server) by "📤," both accompanied by real examples.
+This documentation serves as a guide for developers and users to understand how to interact with the application. It succinctly describes the application’s operation, including access to each available route and event. Modules are represented with '🧩', detailing their access points, with input (user) indicated by '📥' and output (server) by '📤', with real examples.
 
 ### 🧩 Capture
 
 Responsible for processing and handling screenshots.
 
-#### `WS` `print_screen`
+##### `WS` `print_screen`
 
 ![CREATE](https://img.shields.io/badge/CREATE-4CAF50?style=flat-square)
 
@@ -24,7 +24,7 @@ WebSocket event that receives and stores a screenshot sent encoded in base64.
   "The capture was saved with identifier 1"
   ```
 
-#### `GET` `/capture/all`
+##### `GET` `/capture/all`
 
 ![READ](https://img.shields.io/badge/READ-2196F3?style=flat-square)
 
@@ -52,7 +52,7 @@ Route that lists all registered captures in JSON format.
   ]
   ```
 
-#### `GET` `/capture/file/<int:id>`
+##### `GET` `/capture/file/<int:id>`
 
 ![READ](https://img.shields.io/badge/READ-2196F3?style=flat-square)
 
