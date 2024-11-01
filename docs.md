@@ -6,31 +6,27 @@ This documentation serves as a guide for developers and users to understand how 
 
 Responsible for processing and handling screenshots.
 
-##### `WS` `print_screen`
-
-![CREATE](https://img.shields.io/badge/CREATE-4CAF50?style=flat-square)
+##### <img src="https://img.shields.io/badge/WS-D35400?style=flat-square" alt="WS" height="24px"> <img src="https://img.shields.io/badge/print__screen-F9E8D9?style=flat-square" alt="print_screen" height="24px">
 
 WebSocket event that receives and stores a screenshot sent encoded in base64.
 
-- **📥 Input**: _base64 encoded screenshot data._
+- **📥 Input**: _base64 encoded screenshot data_
 
   ```text
   "/9j/4AAQSkZJRgABA..."
   ```
 
-- **📤 Output**: _confirmation message indicating the save status._
+- **📤 Output**: _confirmation message indicating the save status_
 
   ```text
   "The capture was saved with identifier 1"
   ```
 
-##### `GET` `/capture/all`
-
-![READ](https://img.shields.io/badge/READ-2196F3?style=flat-square)
+##### <img src="https://img.shields.io/badge/GET-61AFFE?style=flat-square" alt="GET" height="24px"> <img src="https://img.shields.io/badge//capture/all-EBF3FB?style=flat-square" alt="/capture/all" height="24px">
 
 Route that lists all registered captures in JSON format.
 
-- **📤 Output**: _list of all captures with their details._
+- **📤 Output**: _list of all captures with their details_
 
   ```json
   [
@@ -52,25 +48,23 @@ Route that lists all registered captures in JSON format.
   ]
   ```
 
-##### `GET` `/capture/file/<int:id>`
-
-![READ](https://img.shields.io/badge/READ-2196F3?style=flat-square)
+##### <img src="https://img.shields.io/badge/GET-61AFFE?style=flat-square" alt="GET" height="24px"> <img src="https://img.shields.io/badge//capture/file/%3Cint:id%3E-EBF3FB?style=flat-square" alt="/capture/file/<int:id>" height="24px">
 
 Route that sends the file corresponding to the capture with the specified **`id`**.
 
-- **📤 Output**: _the capture file stored in PNG format as an attachment._
+- **📤 Output**: _the capture file stored in PNG format as an attachment_
 
 ### 🧩 Error
 
 Centralizes exception handling, providing standardized responses to the user in message format for exceptions originating from WebSocket events and in JSON format for HTTP requests. The unique error cases handled are **Not Found (404)** and **Internal Server Error (500)**. Other cases are treated as generic.
 
-- **📤 WebSocket Output**: _simple message with description._
+- **📤 WebSocket Output**: _simple message with description_
 
   ```text
   Resource not found.
   ```
 
-- **📤 HTTP Output**: _JSON with description, named as "message"._
+- **📤 HTTP Output**: _JSON with description, named as "message"_
 
   ```json
   { "message": "Internal server error." }
